@@ -1,0 +1,79 @@
+/* common/common.wxss */
+
+
+.container-circle{
+  height: 160rpx;
+  background: #fff;
+  /* background:red; */
+  padding: 10rpx 20rpx 0;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 0;
+  border-bottom: 2rpx solid #e5e5e5;
+}
+.container-circle .curr{
+  width: 48rpx;
+  height: 34rpx;
+  font-size: 24rpx;
+  color: #999;
+  line-height: 34rpx;
+  margin-left: 48rpx;
+  /* position: absolute; */
+  /* left: 76rpx; */
+}
+.container-circle .circle-box{
+  padding:0 26rpx;
+  box-sizing: border-box;
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+}
+.container-circle .circle{
+  width: 46rpx;
+  height: 46rpx;
+  border-radius: 50%;
+  text-align: center;
+  /* line-height: 46rpx; */
+  box-shadow: 0 0 0 2rpx rgba(0, 0,0, 0.08);
+  font-size:36rpx;
+  line-height: 50rpx;
+  color: #fff;
+  /* background: #eaeaea; */
+  position: relative;
+  z-index: 2;
+}
+
+.currentCircle{
+  background: #fbc53f;
+
+}
+.grayCircle{
+  background: #eaeaea;
+}
+
+.container-circle .line{
+  width: 520rpx;
+  /* height: 2px; */
+  height: 0;
+  border-top: 2rpx dashed #eaeaea;
+  /* background: red; */
+  position: absolute;
+  top:68rpx;
+  left: 116rpx;
+  z-index: 1;
+}
+
+.container-circle .circle-title{
+  width: 160rpx;
+  height: 32rpx;
+  border-radius: 16rpx;
+  background: #fbc53f;
+  box-shadow: 0 0 0 2rpx rgba(0,0,0,0.08);
+  color: #fff;
+  font-size: 18rpx;
+  text-align: center;
+  line-height: 32rpx;
+  font-family: PingFangSC;
+  margin-top: 16rpx;
+  /* padding: 4rpx 10rpx; */
+}

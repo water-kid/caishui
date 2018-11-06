@@ -1,0 +1,14 @@
+<!--common/common.wxml-->
+<template name="circleTemplate">
+<view class='container-circle'>
+  <view class='curr'>当前</view>
+
+  <view class='circle-box'>
+    <view class='circle currentCircle' wx:for="{{ circle }}" wx:key="unique">{{ item }}</view>
+  </view>
+  <view class='line'></view>
+  <view class='circle-title'>
+    房屋持有人登记
+  </view>
+</view>
+</template>

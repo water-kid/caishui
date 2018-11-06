@@ -1,0 +1,44 @@
+<!--pages/personalInfo/personalInfo.wxml-->
+<import src="../../common/common.wxml" />
+<view>
+  <template is="circleTemplate" data="{{circle}}"></template>
+</view>
+<!-- <view class='container-circle'>
+  <view class='curr'>当前</view>
+
+  <view class='circle-box'>
+    <view class='circle currentCircle' wx:for="{{ circle }}">{{ item }}</view>
+  </view>
+  <view class='line'></view>
+  <view class='circle-title'>
+    房屋持有人登记
+  </view>
+</view> -->
+
+ <view class='tip'>填写并上传<text class='redFont'>房屋所有人</text>的身份信息
+  </view>
+  <view class="info-box">
+   真实姓名： <input placeholder='xxx'  />
+  </view>
+  <view class='info-box'>
+  身份证号： <input></input>
+  </view>
+
+  <view class='idCardPic'>
+    <text>身份证正面:</text>
+    <view class='idCardPicBox'>
+      <image src=''></image>
+      <image src=''></image>
+    </view>
+  </view>
+
+<view class='idCardPic'>
+    <text>身份证反面：</text>
+    <view class='idCardPicBox'>
+      <image></image>
+      <image></image>
+    </view>
+</view> 
+
+
+<button class='clickNext'>下一步</button>

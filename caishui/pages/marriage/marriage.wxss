@@ -1,0 +1,147 @@
+/* pages/marriage/marriage.wxss */
+@import "../../common/common.wxss";
+@import "../personalInfo/personalInfo.wxss";
+
+.transformStatus{
+  transition: all 500ms;
+  
+}
+
+
+.marriageStatus{
+  margin-top: 118rpx;
+  border-top: 2rpx solid #dfdfdf;
+  border-bottom: 2rpx solid #dfdfdf;
+  text-indent: 20rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  width: 100%;
+  font-size: 36rpx;
+  color: #333;
+  font-family: PingFangSC;
+  font-weight: regular;
+  position: relative;
+}
+.picker{
+  margin-top: 0;
+  border-top: none;
+}
+
+.marriageStatus .isMarriage{
+  font-size: 32rpx;
+}
+.marriageStatus .triangle{
+  width: 0;height: 0;
+  border: 18rpx solid #999;
+  border-right-color: transparent;
+  border-left-color: transparent;
+  border-bottom-color: transparent;
+  position: absolute;
+  top: 42rpx;
+  left: 292rpx;
+}
+.number .triangle{
+  left: 364rpx;
+}
+
+.type .triangle{
+  left: 314rpx;
+}
+.info-container{
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.scroll-view{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  /* background: lightblue; */
+}
+
+.scroll-view .scroll-view-wrapper{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  height: 100%;
+  display: flex;
+}
+
+
+.scroll-view .scroll-view-wrapper .one-screen{
+  height: 100%;
+  width: 750rpx;
+}
+
+/* 户口簿部分 */
+
+.registered-tip{
+  height: 80rpx;
+  line-height: 80rpx;
+  width: 100%;
+  text-indent: 20rpx;
+  color: #999;
+  font-size: 28rpx;
+  font-family: PingFangSC;
+  border-bottom: 2rpx solid #e5e5e5;
+}
+
+.registered-info-box{
+  margin-left: 20rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+  display: flex;
+  font-size: 34rpx;
+  color: #000;
+}
+.registered-info-box input{
+  height: 90rpx;
+  line-height: 90rpx;
+}
+.resigtered-username{
+  border-bottom: 2rpx solid #e5e5e5;
+}
+
+.registered-pic{
+  width: 100%;
+  border-top: 2rpx solid #e5e5e5;
+  padding: 20rpx 0 ;
+  text-indent: 20rpx;
+  /* height: 80rpx; */
+  font-size: 34rpx;
+  border: 2rpx solid #e5e5e5;
+}
+
+.registered-pic image{
+  width: 340rpx;
+  height: 256rpx;
+  border: 1px solid red;
+  display: block;
+  margin: 10rpx auto;
+}
+
+.contract-tip{
+  padding: 20rpx 80rpx;
+  text-align: center;
+  color: #999;
+  font-size: 28rpx;
+  font-family: PingFangSC;
+}
+
+.contract-pic{
+  width: 340rpx;
+  height: 256rpx;
+  border: 1px solid red;
+  margin: 0 auto;
+}
+
+.contract-pic image{
+  width: 90rpx;
+  height: 50rpx;
+  border: 1px solid blue;
+  margin: 82rpx auto;
+  display: block;
+}

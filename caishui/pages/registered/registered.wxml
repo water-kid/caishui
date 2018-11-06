@@ -1,0 +1,6 @@
+<!--pages/registered/registered.wxml-->
+<text>pages/registered/registered.wxml</text>
+<import src="../../common/common.wxml" />
+<view>
+<!-- <template is="circleTemplate" data="circle"></template> -->
+</view>

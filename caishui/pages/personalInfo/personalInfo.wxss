@@ -1,0 +1,73 @@
+/* pages/personalInfo/personalInfo.wxss */
+@import "../../common/common.wxss";
+
+
+
+
+.tip{
+  height: 80rpx;
+  /* background: #d8d8d8; */
+  line-height: 80rpx;
+  width: 100%;
+  text-indent: 20rpx;
+  color: #999;
+  font-size: 28rpx;
+  font-family: PingFangSC;
+  /* border-top: 2rpx solid #e5e5e5; */
+  border-bottom: 2rpx solid #e5e5e5;
+  
+}
+.tip .redFont{
+  color: #FD6952;
+}
+
+.info-box{
+  width: 100%;
+  height: 90rpx;
+  line-height: 90rpx;
+  border-bottom: 2rpx solid #e5e5e5;
+  text-indent: 20rpx;
+  font-size: 34rpx;
+  font-family: PingFangSC;
+  display: flex;
+}
+.info-box input{
+  width:70%;
+  height:90rpx;
+  /* border: 2rpx solid red; */
+}
+
+.idCardPic{
+  font-size: 34rpx;
+  padding: 20rpx 20rpx;
+  box-sizing: border-box;
+  border-bottom: 2rpx solid #e5e5e5;
+}
+.idCardPic text{
+
+}
+.idCardPic .idCardPicBox{
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10rpx;
+}
+.idCardPic image{
+  width: 340rpx;
+  height: 256rpx;
+  border: 2rpx solid red;
+}
+
+.clickNext{
+  height: 100rpx;
+  width: 100%;
+  background: #4d8cff;
+  color: #fff;
+  font-size: 36rpx;
+  line-height: 100rpx;
+  position: fixed;
+  bottom: 0;
+  /* position: fixed;
+  left: 0;
+  right: 0;
+  margin: auto; */
+}

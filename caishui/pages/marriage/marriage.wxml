@@ -1,0 +1,143 @@
+<!--pages/marriage/marriage.wxml-->
+<import src="../../common/common.wxml" />
+
+<view class='info-container'>
+  <view>
+    <template is="circleTemplate" data="{{ circle }}"></template>
+  </view>
+
+  <!-- <view class='marriageStatus'>
+<picker value="{{marriageIndex}}" range="{{marriageStatus}}" bindchange='bindPickerChange'>婚姻状况：<text class='isMarriage'> {{marriageStatus[marriageIndex]}}</text><text class='triangle'></text></picker>
+</view> -->
+  <!-- {{ activeTab }} -->
+  <view class='scroll-view'>
+    <view class='scroll-view-wrapper transformStatus' bindtouchstart='handlerStart' bindtouchmove='handlerMove' bindtouchend='handlerEnd' style='left:{{ info.offset}}px'>
+      <!-- <view class='one-screen'>1</view>
+      <view class='one-screen'>
+        <scroll-view style='height:100%' scroll-y>
+          <view class='marriageStatus'>
+            <picker value="{{marriageIndex}}" range="{{marriageStatus}}" bindchange='bindPickerChange'>婚姻状况：<text class='isMarriage'> {{marriageStatus[marriageIndex]}}</text><text class='triangle'></text></picker>
+            </view>
+        </scroll-view>
+      </view> -->
+      <!-- <view class='one-screen'>
+        <scroll-view style='height:80%;' scroll-y>
+          <view class='tip'>填写并上传<text class='redFont'>房屋所有人</text>的身份信息
+          </view>
+          <view class="info-box">
+          真实姓名： <input placeholder='xxx'  />
+          </view>
+          <view class='info-box'>
+          身份证号： <input></input>
+          </view>
+
+          <view class='idCardPic'>
+            <text>身份证正面:</text>
+            <view class='idCardPicBox'>
+              <image src=''></image>
+              <image src=''></image>
+            </view>
+          </view>
+
+        <view class='idCardPic'>
+            <text>身份证反面：</text>
+            <view class='idCardPicBox'>
+              <image></image>
+              <image></image>
+            </view>
+        </view> 
+          
+
+        <button class='clickNext'>下一步</button>
+
+        </scroll-view>
+        
+      </view> -->
+      <!-- <view class='one-screen'>
+        <scroll-view style='height:100%' scroll-y>
+          <view class='registered-tip'>
+            上传户口簿(户主及家庭成员)
+          </view>
+          <view class="registered-info-box resigtered-username">
+            户主姓名： <input placeholder='xxx'  />
+          </view>
+          <view class="registered-info-box">
+            身份证号： <input placeholder='xxx'  />
+          </view>
+          <view class='registered-pic'>
+            <text>户口簿:</text>
+              <image src=''></image>
+            
+          </view>
+        </scroll-view>
+      </view> -->
+
+      <!-- <view class='one-screen'>
+        <scroll-view style='height:100%' scroll-y>
+          <view class='marriageStatus access picker'>
+            <picker value="{{accessIndex}}" range="{{accessStatus}}" bindchange='bindAccessPickerChange'>获取方式：
+              <text class='isMarriage'> {{accessStatus[accessIndex]}}</text>
+              <text class='triangle'></text>
+            </picker>
+          </view>
+
+          <view class='marriageStatus number picker'>
+            <picker value="{{roomIndex}}" range="{{roomStatus}}" bindchange='bindRoomPickerChange'>已购房屋套数：
+              <text class='isMarriage'> {{roomStatus[roomIndex]}}</text>
+              <text class='triangle'></text>
+            </picker>
+          </view>
+          <view class='registered-tip'>
+            《房屋所有权证》 证号
+          </view>
+          <view class="info-box">
+            证号：
+            <input placeholder='输入《房屋所有权证》 证号' />
+          </view>
+          <view class='registered-pic'>
+            <text>发票:</text>
+            <image src=''></image>
+
+          </view>
+          <view>
+
+          </view>
+
+        </scroll-view>
+
+      </view> -->
+
+      <view class='one-screen'>
+        <scroll-view style='height:100%' scroll-y>
+          <view class="info-box">
+            房屋面积：
+            <input placeholder='填写你购买的房屋面积' />
+          </view>
+           <view class="info-box">
+            房屋总价：
+            <input placeholder='填写你购买的房屋总价' />
+          </view>
+
+           <view class='marriageStatus type picker'>
+            <picker value="{{typeIndex}}" range="{{typeStatus}}" bindchange='bindTypePickerChange' style='font-size:34rpx;'>购房类型：
+              <text class='isMarriage' style='padding-left:10rpx;'> {{typeStatus[typeIndex]}}</text>
+              <text class='triangle'></text>
+            </picker>
+          </view>
+       <view class="info-box">
+            购房地址：
+            <input placeholder='购买房屋的详细地址' />
+        </view>
+
+        <view class='contract-tip'>
+        请选择购房合同或备案表上传 如选择上传购房合同，请按照合同顺序依次上传
+        </view>
+        <view class='contract-pic'>
+          <image src=''></image>
+        </view>
+
+        </scroll-view>
+      </view>
+    </view>
+  </view>
+</view>
