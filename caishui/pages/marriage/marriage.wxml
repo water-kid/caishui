@@ -2,9 +2,24 @@
 <import src="../../common/common.wxml" />
 
 <view class='info-container'>
-  <view>
+  <!-- <view>
     <template is="circleTemplate" data="{{ circle }}"></template>
+  </view> -->
+
+
+  <view class='container-circle'>
+    <view class='curr' style='margin-left:{{ activeTab*96+48}}rpx'>当前</view>
+
+    <view class='circle-box'>
+      <view wx:for="{{ circle }}" wx:key="index" class='circle  {{index==activeTab?"currentCircle":"grayCircle"}}' bindtap='handlerClickCircle' data-index="{{index}}">{{ item }}
+      </view>
+    </view>
+    <view class='line'></view>
+    <view class='circle-title' style='left:{{activeTab*90+20}}rpx'>
+      {{ circleTxt[activeTab] }}
+    </view>
   </view>
+
 
   <!-- <view class='marriageStatus'>
 <picker value="{{marriageIndex}}" range="{{marriageStatus}}" bindchange='bindPickerChange'>婚姻状况：<text class='isMarriage'> {{marriageStatus[marriageIndex]}}</text><text class='triangle'></text></picker>
@@ -12,67 +27,81 @@
   <!-- {{ activeTab }} -->
   <view class='scroll-view'>
     <view class='scroll-view-wrapper transformStatus' bindtouchstart='handlerStart' bindtouchmove='handlerMove' bindtouchend='handlerEnd' style='left:{{ info.offset}}px'>
-      <!-- <view class='one-screen'>1</view>
+
+      <!-- 房屋持有人登记 -->
       <view class='one-screen'>
-        <scroll-view style='height:100%' scroll-y>
-          <view class='marriageStatus'>
-            <picker value="{{marriageIndex}}" range="{{marriageStatus}}" bindchange='bindPickerChange'>婚姻状况：<text class='isMarriage'> {{marriageStatus[marriageIndex]}}</text><text class='triangle'></text></picker>
-            </view>
-        </scroll-view>
-      </view> -->
-      <!-- <view class='one-screen'>
         <scroll-view style='height:80%;' scroll-y>
-          <view class='tip'>填写并上传<text class='redFont'>房屋所有人</text>的身份信息
+          <view class='tip'>填写并上传
+            <text class='redFont'>房屋所有人</text>的身份信息
           </view>
           <view class="info-box">
-          真实姓名： <input placeholder='xxx'  />
+            真实姓名：
+            <input placeholder='xxx' value="{{allInfo.userName}}" bindblur='handlerUserName' />
           </view>
           <view class='info-box'>
-          身份证号： <input></input>
+            身份证号：
+            <input value='{{allInfo.idCardNumber}}' bindblur='handlerIdCardNumber'></input>
           </view>
 
           <view class='idCardPic'>
             <text>身份证正面:</text>
             <view class='idCardPicBox'>
-              <image src=''></image>
-              <image src=''></image>
+              <image src='{{allInfo.idCardPic1==""?"../../images/idCardPic1.png":allInfo.idCardPic1}}'  bindtap='handlerIdCardPic1'></image>
+              <image src='../../images/idCardPicDemo1.png'></image>
             </view>
           </view>
 
-        <view class='idCardPic'>
+          <view class='idCardPic'>
             <text>身份证反面：</text>
             <view class='idCardPicBox'>
-              <image></image>
-              <image></image>
+              <image src="{{allInfo.idCardPic2==''?'../../images/idCardPic2.png':allInfo.idCardPic2}}" bindtap='handlerIdCardPic2'></image>
+              <image src='../../images/idCardPicDemo2.png'></image>
             </view>
-        </view> 
-          
+          </view>
 
-        <button class='clickNext'>下一步</button>
+
+          <button class='clickNext' bindtap='clickNext'>下一步</button>
 
         </scroll-view>
+
+      </view>
+
+      <!-- 婚姻状态 -->
+      <view class='one-screen'>
+        <scroll-view style='height:100%' scroll-y>
+          <view class='marriageStatus'>
+            <picker value="{{marriageIndex}}" range="{{marriageStatus}}" bindchange='bindPickerChange'>婚姻状况：
+              <text class='isMarriage'> {{marriageStatus[marriageIndex]}}</text>
+              <text class='triangle'></text>
+            </picker>
+          </view>
+        </scroll-view>
+        <button class='clickNext' bindtap='clickNext'>下一步</button>
         
-      </view> -->
-      <!-- <view class='one-screen'>
+      </view>
+      <!-- 户口簿信息 -->
+      <view class='one-screen'>
         <scroll-view style='height:100%' scroll-y>
           <view class='registered-tip'>
             上传户口簿(户主及家庭成员)
           </view>
           <view class="registered-info-box resigtered-username">
-            户主姓名： <input placeholder='xxx'  />
+            户主姓名： <input placeholder='xxx' value="{{ allInfo.registeredUserName }}"  bindblur='handlerRegisteredUserName'/>
           </view>
           <view class="registered-info-box">
-            身份证号： <input placeholder='xxx'  />
+            身份证号： <input placeholder='xxx' value='{{allInfo.registeredIdCardNumber}}' bindblur='handlerRegisteredIdCardNumber' />
           </view>
           <view class='registered-pic'>
             <text>户口簿:</text>
-              <image src=''></image>
+              <image src='{{allInfo.registeredPic==""?"../../images/registeredPic.png":allInfo.registeredPic}}'  bindtap='handlerRegisteredPic'></image>
             
           </view>
         </scroll-view>
-      </view> -->
-
-      <!-- <view class='one-screen'>
+        <button class='clickNext' bindtap='clickNext'>下一步</button>
+        
+      </view>
+      <!-- 购房发票 -->
+      <view class='one-screen'>
         <scroll-view style='height:100%' scroll-y>
           <view class='marriageStatus access picker'>
             <picker value="{{accessIndex}}" range="{{accessStatus}}" bindchange='bindAccessPickerChange'>获取方式：
@@ -90,13 +119,13 @@
           <view class='registered-tip'>
             《房屋所有权证》 证号
           </view>
-          <view class="info-box">
+          <view class="info-box" >
             证号：
-            <input placeholder='输入《房屋所有权证》 证号' />
+            <input placeholder='输入《房屋所有权证》 证号' value='{{allInfo.roomNumber}}' bindtap='handlerRoomNumber' />
           </view>
           <view class='registered-pic'>
             <text>发票:</text>
-            <image src=''></image>
+            <image src='{{allInfo.bill==""?"../../images/bill.png":allInfo.bill}}' bindtap='handlerBill'></image>
 
           </view>
           <view>
@@ -104,18 +133,19 @@
           </view>
 
         </scroll-view>
+        <button class='clickNext' bindtap='clickNext'>下一步</button>
 
-      </view> -->
-
+      </view>
+<!-- 购房合同 -->
       <view class='one-screen'>
         <scroll-view style='height:100%' scroll-y>
           <view class="info-box">
             房屋面积：
-            <input placeholder='填写你购买的房屋面积' />
+            <input placeholder='填写你购买的房屋面积' value="{{allInfo.roomArea}}" bindblur='handlerRoomArea' />
           </view>
            <view class="info-box">
             房屋总价：
-            <input placeholder='填写你购买的房屋总价' />
+            <input placeholder='填写你购买的房屋总价' value='{{allInfo.roomTotal}}' bindblur="handlerRoomTotal" />
           </view>
 
            <view class='marriageStatus type picker'>
@@ -126,17 +156,59 @@
           </view>
        <view class="info-box">
             购房地址：
-            <input placeholder='购买房屋的详细地址' />
+            <input placeholder='购买房屋的详细地址' value="{{allInfo.roomAddress}}" bindblur='handlerRoomAddress' />
         </view>
 
         <view class='contract-tip'>
         请选择购房合同或备案表上传 如选择上传购房合同，请按照合同顺序依次上传
         </view>
-        <view class='contract-pic'>
-          <image src=''></image>
+        <view >
+          <image class='contract-pic' src='{{allInfo.roomContractPic==""?"../../images/roomContractPic.png":allInfo.roomContractPic}}' bindtap='handlerRoomContractPic'></image>
         </view>
 
         </scroll-view>
+
+       <button class='clickNext' bindtap='clickNext'>下一步</button>
+        
+      </view>
+
+    <!-- 授权与声明 -->
+      <view class='one-screen'>
+        <scroll-view style='height:100%' scroll-y>
+          <view class='authorization-box'>
+            <text>请认真阅读授权书，阅读授权书信息后签字确认                  </text>
+            <image src='../../images/defaultPic.png'></image>
+          </view>
+          <view class='authorization-box'>
+            <text>请认真阅读声明书，阅读声明书信息后签字确认                  </text>
+            <image src='../../images/defaultPic.png'></image>
+          </view>
+          <view class='authorization-box'>
+            <text>请认真阅读个人情况说明书，阅读个人情况说明书后签字确认                  </text>
+            <image src='../../images/defaultPic.png'></image>
+
+          </view>
+        </scroll-view>
+        <button class='clickNext' bindtap='clickNext'>下一步</button>
+
+      </view>
+
+
+<!-- 拆迁补偿协议 -->
+      <view class='one-screen'>
+        <scroll-view style='height:100%' scroll-y>
+          <view class="remove-protocol">
+            <view class='txt1'>拆迁补偿协议上传</view>
+            <view class='txt2'>（用于税务局核税时的税务减免）</view>
+            <image src='{{allInfo.taxPic==""?"../../images/defaultPic.png":allInfo.taxPic}}'      bindtap='handlerTaxPic'></image>
+            <view class='bottom-txt'>
+              非拆迁用户可
+              <text>跳过此步骤</text>
+            </view>
+          </view>
+        </scroll-view>
+        <button class='clickNext'>完成</button>
+
       </view>
     </view>
   </view>

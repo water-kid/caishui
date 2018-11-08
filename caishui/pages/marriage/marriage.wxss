@@ -112,13 +112,13 @@
   text-indent: 20rpx;
   /* height: 80rpx; */
   font-size: 34rpx;
-  border: 2rpx solid #e5e5e5;
+  /* border: 2rpx solid #e5e5e5; */
 }
 
 .registered-pic image{
   width: 340rpx;
   height: 256rpx;
-  border: 1px solid red;
+  /* border: 1px solid red; */
   display: block;
   margin: 10rpx auto;
 }
@@ -134,14 +134,70 @@
 .contract-pic{
   width: 340rpx;
   height: 256rpx;
-  border: 1px solid red;
+  /* border: 1px solid red; */
   margin: 0 auto;
+  display: block;
 }
-
+/* 
 .contract-pic image{
   width: 90rpx;
   height: 50rpx;
   border: 1px solid blue;
   margin: 82rpx auto;
   display: block;
+} */
+
+.authorization-box{
+  padding-bottom: 20rpx;
+  border-bottom: 2rpx solid #e5e5e5;
+}
+.authorization-box text{
+  height:36rpx;
+  /* line-height: 36rpx; */
+   color: #999;
+   font-size: 28rpx;
+   font-family: PingFangSC;
+  
+   display: block;
+   width: 604rpx;
+   margin: 40rpx auto 56rpx;
+}
+
+.authorization-box image{
+  width: 340rpx;
+  height: 256rpx;
+  /* border: 1px dashed #ccc; */
+  margin: 0 auto;
+  display: block;
+}
+
+
+.remove-protocol{
+  padding: 20rpx 0 0;
+  text-align: center;
+}
+
+.remove-protocol .txt1{
+  color: #999;
+  font-size: 28rpx;
+}
+.remove-protocol .txt2{
+  color: #FE664F;
+  font-size: 28rpx;
+}
+.remove-protocol image{
+  margin-top: 18rpx;
+  width: 340rpx;
+  height: 256rpx;
+  /* border: 1px solid red; */
+}
+
+.remove-protocol .bottom-txt{
+  font-size: 32rpx;
+  color: #999;
+  margin-top: 498rpx;
+}
+.remove-protocol .bottom-txt text{
+  color: #4D8CFF;
+  text-decoration: underline;
 }

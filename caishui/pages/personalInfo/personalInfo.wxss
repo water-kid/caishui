@@ -54,7 +54,7 @@
 .idCardPic image{
   width: 340rpx;
   height: 256rpx;
-  border: 2rpx solid red;
+  /* border: 2rpx solid red; */
 }
 
 .clickNext{
