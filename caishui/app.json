@@ -1,7 +1,6 @@
 {
   "pages": [
-    "pages/marriage/marriage",
-    "pages/personalInfo/personalInfo",
+    "pages/step/step",
     "pages/index/index",
     "pages/logs/logs",
     "common/common",
